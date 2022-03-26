@@ -14,5 +14,10 @@ jobs:
         with:
           name: my-artifact
           path: world.txt
+      - shell: pwsh
+        env:
+          DB_PASSWORD: ${{ secrets.MYSECRETVAL }}
+        run: |
+          echo "$env:DB_PASSWORD"
     env:
       FOO: BAR
